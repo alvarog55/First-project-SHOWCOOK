@@ -1,0 +1,63 @@
+<div class="post">
+<div class="container-fluid title-account">
+<h1>Account</h1>
+</div>
+<div class="container-fluid body-account">
+  	<div class="row">
+	  	<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+		    		<h3 class="panel-title">Personal Information</h3>
+		  		</div>
+		  		<div class="panel-body">
+		    		<strong>Name</strong><br>
+		    		<%= current_user.name %> <%= current_user.surname%><hr>
+		    		<strong>Address</strong><br>
+		    		<%= current_user.street_address%><hr>
+		    		<strong>Location</strong><br>
+		    		<%= current_user.city %> (<%= current_user.country%>)<hr>
+		    		<strong>Email:</strong><br>
+		    		<%= current_user.email %><br><br>
+		    		<div class="personal">
+		    			<%= button_to('Edit', edit_user_registration_path, :class => "btn default-cash btn-xs", :method => :get, :role => "group") %>
+		    		</div>
+		  		</div>
+			</div>
+  	   	</div>
+		<div class="col-md-5">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+			    	<h3 class="panel-title">Account Status</h3>
+			  	</div>
+			  	<div class="panel-body">
+			    	<strong>Money</strong><br>
+		    		Avalaible<hr>
+		    		If you have funds on hold, click the History button to view them.
+			  	</div>
+
+			  	<div class="cash">
+		  			<button type="button" class="btn default-cash btn-xs">History</button>
+		  			<br>
+		  			<br>
+		  			<button type="button" class="btn default-cash btn-xs">My Rebate Status</button>
+				</div>
+			</div>
+		</div>
+			
+		
+		<div class="col-md-2"></div>
+		<div class="cash">
+		<button type="button" class="btn btn-success">Make a Deposit</button><hr>
+		</div>
+		<div class="cash">
+  			<button type="button" class="btn default-cash btn-xs">Cash Out</button>
+  			<br>
+  			<br>
+  			<button type="button" class="btn default-cash btn-xs">Pending Cash Out</button>
+  			
+
+		</div>
+	</div>
+</div>
+</div>
+

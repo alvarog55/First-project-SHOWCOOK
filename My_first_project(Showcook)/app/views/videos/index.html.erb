@@ -1,0 +1,23 @@
+<div class="post">
+	<h1> My videos</h1>
+	<ul>
+		<% @videos.each do |video| %>
+		<h2 class="title"><%= link_to(video.title, user_video_path(video.user,video)) %></h2>
+			<p class="byline">Posted by <%= link_to(video.user.name, user_path(video.user)) %> (<%= video.updated_at.time.to_formatted_s(:short) %>)</p>
+			<p><%= image_tag(video.photo.url(:medium)) %></p>
+			<div class="entry">
+				<p><%= video.description%></p>
+				<div class="personal">
+		    		<%= button_to('Edit Video', edit_user_video_path(video.user,video), :class => "btn default-cash btn-xs", :method => :get, :role => "group") %><br>
+				<%= button_to('Delete Video', user_video_path(video.user, video), :class => "btn default-cash btn-xs", method: :delete, data: {confirm: "Are you sure?"}) %>	
+		    		</div>
+		    		
+			<div class="meta"><p class="links"><a href="#" class="comments">Comments (32)</a></p></div>
+			</div>
+			
+		<% end %>
+		
+	</ul>
+
+		<li> <%= link_to "Go To Your Profile", root_path %></li>
+</div>

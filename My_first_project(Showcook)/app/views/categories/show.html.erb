@@ -1,0 +1,20 @@
+<div class="post">
+
+	<h1><%= @category.title %></h1>
+
+    <p><%= @category.description %></p>
+    <hr>
+    <div class="post">
+	<% @videos.each do |video| %>
+		<h2 class="title"><%= link_to(video.title, user_video_path(video.user,video)) %></h2>
+		<p class="byline">Posted by <%= link_to(video.user.name, user_path(video.user)) %> (<%= video.updated_at.time.to_formatted_s(:short) %>)</p>
+		<p><%= image_tag(video.photo.url(:medium)) %></p>
+		<div class="entry">
+			<p><%= video.description%></p>
+		<div class="meta"><p class="links"><a href="#" class="comments">Comments (32)</a></p></div>
+		</div>
+	<% end %>
+</div>
+</div>
+
+

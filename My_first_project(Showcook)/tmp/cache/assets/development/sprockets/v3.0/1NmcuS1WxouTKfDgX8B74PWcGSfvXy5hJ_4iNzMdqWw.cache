@@ -1,0 +1,27 @@
+{:uriI"„file://app/assets/bootstrap-3.3.5-dist/index.html?type=text/html&id=f268e6ff668e665e8403e739e0800b51781bfe5774e2e615f9e013c05f4a6a8b:ET:load_pathI"$app/assets/bootstrap-3.3.5-dist;T:filenameI"/app/assets/bootstrap-3.3.5-dist/index.html;T:	nameI"
+index;T:logical_pathI"index.html;T:content_typeI"text/html;T:sourceI"<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <title>Bootstrap</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <link href="css/bootstrap.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <h1>Bootstrap</h1>
+    <h2>Template </h2>
+<div class="container">
+<div class="row">
+  <div class="col-md-11">1</div> 
+  <div class="col-md-1">1</div> 
+
+
+</div>
+</div>
+   
+  </body>
+</html>;T:metadata{	:dependencieso:Set:
+@hash{	I"environment-version;TTI"environment-paths;TTI"2processors:type=text/html&file_type=text/html;TTI"=file-digest://app/assets/bootstrap-3.3.5-dist/index.html;TT:charsetI"
+utf-8;F:digest"%«hË©1¸,şòÛ—%}D ÂØ?p-ç*s`¤:lengthi:dependencies_digest"%Æ¿{L™{lœaË	Ïú™‡6ÆÌ	yÈ±ázƒ:idI"Ef268e6ff668e665e8403e739e0800b51781bfe5774e2e615f9e013c05f4a6a8b;F:
+mtimel+½KäU

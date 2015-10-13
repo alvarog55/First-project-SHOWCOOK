@@ -1,0 +1,55 @@
+<div class="col-md-2 sidebar">
+  <div id="sidebar">
+        <ul>
+          <li id="search">
+            <h2>Search</h2>
+            <form method="get" action="#">
+              <fieldset>
+                <input type="text" id="seach-text" name="s" value="" />
+                <input type="submit" id="search-submit" value="Search" />
+              </fieldset>
+            </form>
+          </li>
+          <li class="top-my-videos">
+            <h2><%= link_to "My Videos", user_videos_path(current_user) %></h2>
+            <ul>
+              <% @my_videos.each do |video| %>
+                <li><%= link_to(video.title, user_video_path(video.user, video)) %></li>
+              <% end %>
+            </ul>
+          </li>
+          <li class="sidebar-videos">
+            <h2>Purchased Videos</h2>
+            <ul>
+              <li><a href="#">Nec metus sed donec</a></li>
+              <li><a href="#">Magna lacus bibendum mauris</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+              <li><a href="#">Eget tempor eget nonummy</a></li>
+              <li><a href="#">Nec metus sed donec</a></li>
+              <li><a href="#">Magna lacus bibendum mauris</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-videos">
+            <h2>Top Rated videos</h2>
+            <ul>
+              <li><a href="#">Nec metus sed donec</a></li>
+              <li><a href="#">Magna lacus bibendum mauris</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+              <li><a href="#">Eget tempor eget nonummy</a></li>
+              <li><a href="#">Nec metus sed donec</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-videos">
+            <h2>Ordered Videos</h2>
+            <ul>
+              <li><a href="#">Eget tempor eget nonummy</a></li>
+              <li><a href="#">Nec metus sed donec</a></li>
+              <li><a href="#">Magna lacus bibendum mauris</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+</div>

@@ -1,0 +1,57 @@
+<header>
+<div class="row">
+  <div class="col-md-4">
+      <div id="logo">
+        <h1><a href="#">ShowCook</a></h1>
+        <h2><a>Teach And Learn To Cook</a></h2>
+      </div>
+  </div>
+  <div class="col-md-8">
+    <nav class="navbar navbar-default" id="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li ><%= link_to "Account", account_path %></a></li>
+        <% if current_user%>
+          <li><%= link_to "Create Video", new_user_video_path(current_user) %></a></li>
+        <%end%>
+        <li><a href="#">Information</a></li>
+        <li><a href="#">Contact</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li> <% if user_signed_in? %>
+            <p><%= link_to 'Sign out', destroy_user_session_path, method:
+                    'DELETE' %></p>
+            <% else %> 
+            <p>
+                <%= link_to 'Sign_up', new_user_registration_path %> |
+                <%= link_to 'Sign_in', new_user_session_path %>
+            </p>
+            <% end %>
+        </li>
+        <% if current_user %>
+          <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %>
+          </li>
+        <% else %>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</div>  
+        <!--<% if current_user %>
+          <li><%= link_to "Add a New Video", new_user_video_path(current_user) %></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Videos <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <% current_user.videos.each do |video| %>
+                  <li>
+                    <%= link_to(video.title, user_video_path(video.user,video)) %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+        <% end %>
+      </ul>-->
+</header>

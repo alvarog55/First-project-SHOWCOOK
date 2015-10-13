@@ -1,0 +1,20 @@
+<div class="col-md-2 rightbar">
+  		<div id="rightbar">
+        <ul>
+          <li id="food">
+            <h4><%= link_to("Food Categories", categories_path) %></h4>
+          </li>
+          <li class="all-categories">
+            <% @categories.each do |category| %>
+            <h2 class="sidebar-videos"><%= link_to(category.title, category_path(category.id)) %></h2>
+              <ul>
+              <%category.videos.each do |video| %>
+                  <li><%= link_to(video.title, user_video_path(video.user, video))%></li>
+              <% end %>
+              </ul>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+	</div>
+

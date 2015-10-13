@@ -1,0 +1,9 @@
+<div class="post">
+	<h1>Food Categories</h1>
+	<ul>
+		<% @categories.each do |category| %>
+		<li> <%= link_to(category.title, category_path(category)) %> </li>
+		<li> <%= category.description%></li> 
+		<% end %>
+	</ul>
+</div>

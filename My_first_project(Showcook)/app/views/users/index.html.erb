@@ -1,0 +1,20 @@
+<div class="post">
+<h1> Users</h1>
+<ul>
+	<% @users.each do |a| %>
+        <h2 class="title"><%= link_to(a.name, user_path(a)) %></h2>
+        <p class="byline"><%= a.city%></p>
+        <% if a.videos.last %> 
+	        <h2 class="title"><%= link_to(a.videos.last.title, user_video_path(a.id, a.videos.last.id)) %></h2>
+	        <p> <%= image_tag(a.videos.last.photo.url(:medium)) %></p>
+	        <div class="entry">
+		        <div class="meta">
+		        	<p class="links">
+		        		<a href="#" class="comments">Comments (32)</a>
+		        	</p>
+		    	</div>
+        	</div>
+        <% end %>
+	<% end %>
+</ul>
+</div>

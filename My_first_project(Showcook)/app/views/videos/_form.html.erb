@@ -1,0 +1,59 @@
+
+<% if video.id.nil?%>
+  <%button_name = "Create Video" %>
+<%else%>
+  <%button_name = "Edit Video" %>
+<%end%>
+
+
+<%= form_for [@user, @video] do |f| %>
+    
+    <div class="form-group">
+      <%= f.label :photo, class: 'col-sm-2 control-label'  %>
+      <div class="col-sm-9">
+        <%= f.file_field :photo %>
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+        <%= f.label :title, class: 'col-sm-2 control-label'  %>
+      <div class="col-sm-9">
+        <%= f.text_field :title, autofocus: true, class: 'form-control'  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, class: 'col-sm-2 control-label'  %>
+      <div class="col-sm-9">
+        <%= f.text_area :description, autofocus: true, class: 'form-control'  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :link_url, class: 'col-sm-2 control-label'  %>
+      <div class="col-sm-9">
+        <%= f.text_field :link_url, autofocus: true, class: 'form-control'  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :recipe, class: 'col-sm-2 control-label'  %>
+      <div class="col-sm-9">
+        <%= f.text_area :recipe, autofocus: true, class: 'form-control'  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :category_id, class: 'col-sm-2 control-label'  %>
+      <div class="col-sm-6">
+        <%= f.select(:category_id, options_for_select([['Chinese', 1], ['Japanese', 2],['Italian', 3], ['Spanish', 4], ['Indian', 5], ['Thai', 6], ['Turkish', 7], ['Vegan', 8], ['French', 9]])) %>
+      </div>
+    </div>
+   
+    <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-6 log-in" >
+                <%= f.submit "Update Video", class: "btn btn-primary" %>
+            </div>
+        </div>
+<% end %>

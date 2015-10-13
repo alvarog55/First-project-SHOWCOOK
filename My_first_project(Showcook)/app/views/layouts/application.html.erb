@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Showcook</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+	  	<% if current_user %>
+		  	<%= render "/layouts/navbar" %>
+			<div class="row main-row">
+				<%= render "/layouts/sidebar" %>
+				<div class="col-md-7" id="page">
+						<div id="content">
+							<%= yield %>
+						</div>
+				</div>
+				<%= render "/layouts/rightbar" %>
+			</div>
+			<%= render "/layouts/footerbar" %>
+		<%else%>
+			<%= render "/layouts/navbar" %>
+			<div class="row main-row">
+				<div class="col-md-12 contain">
+					<%= yield %>
+				</div>
+			</div>
+			<%= render "/layouts/footerbar" %>
+		<%end%>
+
+
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	</body>
+</html>
